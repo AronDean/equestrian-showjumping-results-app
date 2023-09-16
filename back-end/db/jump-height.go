@@ -71,7 +71,7 @@ func seedJumpHeights(db *DB) error {
 			MinHeight:  0,
 			MaxHeight:  95,
 			Multiplier: 1,
-			Title:      "Upto and with 95cm",
+			Title:      "Bis 95 cm",
 		},
 		{
 			MinHeight:  100,
@@ -113,7 +113,7 @@ func seedJumpHeights(db *DB) error {
 			MinHeight:  160,
 			MaxHeight:  165,
 			Multiplier: 170,
-			Title:      "From 160cm",
+			Title:      "Ab 160 cm",
 		},
 	}
 

@@ -5,7 +5,7 @@ services:
     container_name: esr-db
     image: postgres:13-alpine
     env_file:
-      - ./aron-project/.env
+      - ./back-end/.env
     volumes:
       - db:/var/lib/postgresql/data
     ports:
