@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  db:
+    container_name: esr-db
+    image: postgres:13-alpine
+    env_file:
+      - ./aron-project/.env
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    container_name: esr-app
+    build:
+      context: ./back-end
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./back-end/.env
+    depends_on:
+      - db
+    volumes:
+      - ./back-end:/app
+
+  ui:
+    container_name: esr-ui
+    build:
+      context: ./front-end
+    ports:
+      - "3000:3000"
+    depends_on:
+      - app
+    volumes:
+      - ./front-end:/app
+
+volumes:
+  db:
