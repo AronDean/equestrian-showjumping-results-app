@@ -54,7 +54,7 @@ func (h *UserHandler) Signin(w http.ResponseWriter, r *http.Request) {
 	// Compare password
 	err = utils.ComparePassword(req.Password, user.HashedPassword)
 	if err != nil {
-		utils.InternalServerError(w, err)
+		utils.BadRequestError(w, errors.New("invalid email or password"))
 		return
 	}
 
