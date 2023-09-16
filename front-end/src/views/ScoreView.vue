@@ -150,7 +150,7 @@ function formattedCreatedAt(created_at: any): string {
     year: "numeric",
     month: "short",
     day: "numeric"
-  };
+  } as any;
   const date = new Date(created_at);
   return date.toLocaleString("de-DE", options).replace(".,", ",");
 }
