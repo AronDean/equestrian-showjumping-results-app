@@ -3,14 +3,24 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"time"
+
+	"github.com/joho/godotenv"
+
+	"backend/db"
+	"backend/routes"
 )
 
-func greet(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World! %s", time.Now())
-}
-
 func main() {
-	http.HandleFunc("/", greet)
-	http.ListenAndServe(":8080", nil)
+	err := godotenv.Load()
+	if err != nil {
+		panic(err)
+	}
+
+	db, err := db.New()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Server started running...")
+	http.ListenAndServe("0.0.0.0:8080", routes.Routes(db))
 }
