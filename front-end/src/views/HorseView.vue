@@ -8,13 +8,13 @@
         >
       </h1>
       <h1 v-if="showModal && !isUpdate" class="text-begin">
-        Add a Horse
+        Fügen Sie ein Pferd hinzu
         <a v-if="showModal" class="btn btn-outline-secondary float-end" @click="hideModal"
-          >Go Back</a
+          >Geh zurück</a
         >
       </h1>
       <h1 v-if="showModal && isUpdate" class="text-begin">
-        Update Horse
+        Pferd aktualisieren
         <a v-if="showModal" class="btn btn-outline-secondary float-end" @click="hideModal"
           >Go Back</a
         >

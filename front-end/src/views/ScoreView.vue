@@ -13,7 +13,7 @@
       <h1 class="text-begin" v-if="showModal">
         Fügen Sie einen neuen Spielstand hinzu
         <a v-if="showModal" class="btn btn-outline-secondary float-end" @click="showModal = false"
-          >Go Back</a
+          >Geh zurück</a
         >
       </h1>
     </header>
